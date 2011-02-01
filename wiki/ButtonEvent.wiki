@@ -2,7 +2,9 @@ Event handler for buttons (tactile switches).
 
 = Methods =
 
-*addButton*(pin, onDown, onUp, onHold, holdMillisWait, onDouble, doubleMillisWait)*
+*addButton*(pin, onDown, onUp, onHold, holdMillisWait, onDouble, doubleMillisWait)
+
+
 
  **pin*: Pin where the button is connected.
  **onDown*: Method called on onDown events.
@@ -15,6 +17,12 @@ Event handler for buttons (tactile switches).
  *loop()*: 
 
 = Events =
+
+ **onDown*: Method called on onDown events.
+ **onUp*: Method called on onUp events.
+ **onHold*: Method called on onHold events.
+ **holdMillisWait*: Hold time in milisseconds.
+ **onDouble*: Method called on onDoubleevents.
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
