@@ -4,27 +4,29 @@ Event handler for buttons (tactile switches).
 
 *addButton*(pin, onDown, onUp, onHold, holdMillisWait, onDouble, doubleMillisWait)
 
+ Add a new button to event handler.
 
+ * *pin*: Pin where the button is connected.
+ * *onDown*: Method called on onDown events.
+ * *onUp*: Method called on onUp events.
+ * *onHold*: Method called on onHold events.
+ * *holdMillisWait*: Hold time in milisseconds.
+ * *onDouble*: Method called on onDoubleevents.
+ * *doubleMillisWait*:  Double time in milisseconds.
 
- **pin*: Pin where the button is connected.
- **onDown*: Method called on onDown events.
- **onUp*: Method called on onUp events.
- **onHold*: Method called on onHold events.
- **holdMillisWait*: Hold time in milisseconds.
- **onDouble*: Method called on onDoubleevents.
- **doubleMillisWait*:  Double time in milisseconds.
+*loop*()
 
- *loop()*: 
+ Event handler process loop. Must be added to main 'loop()' function.
 
 = Events =
 
- **onDown*: Method called on onDown events.
- **onUp*: Method called on onUp events.
- **onHold*: Method called on onHold events.
- **holdMillisWait*: Hold time in milisseconds.
- **onDouble*: Method called on onDoubleevents.
+ * *onDown*: Happens once when the button is pressed.
+ * *onUp*: Happens once when the button is released.
+ * *onHold*: Happens once when the button is keep pressed during the time expressed through 'holdMillisWait' parameter.
+ * *onDouble*: Happens once when the button is pressed at second time during the time expressed through 'doubleMillisWait' parameter.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= Comments =
+
+ Passing a *NULL* parameter to event method in *addButton* or setting it's wait time to *0* will disable the event.
+
+= Example =
