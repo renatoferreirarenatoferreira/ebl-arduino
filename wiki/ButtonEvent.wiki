@@ -44,7 +44,7 @@ void setup() {
                         onUp,     //onUp event function
                         onHold,   //onHold event function
                         1000,     //hold time in milliseconds
-                        onDouble, //double event function
+                        onDouble, //onDouble event function
                         200);     //double time interval
 
   Serial.begin(9600);
