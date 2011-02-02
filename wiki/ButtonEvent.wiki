@@ -10,9 +10,9 @@ Event handler for buttons (tactile switches).
  * *onDown*: Method called on onDown events.
  * *onUp*: Method called on onUp events.
  * *onHold*: Method called on onHold events.
- * *holdMillisWait*: Hold time in milisseconds.
+ * *holdMillisWait*: Hold time in miliseconds.
  * *onDouble*: Method called on onDoubleevents.
- * *doubleMillisWait*:  Double time in milisseconds.
+ * *doubleMillisWait*:  Double time in miliseconds.
 
 *ButtonEvent.loop*()
 
