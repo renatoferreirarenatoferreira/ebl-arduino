@@ -2,7 +2,7 @@ Event handler for buttons (tactile switches).
 
 = Methods =
 
-*ButtonEvent.addButton*(pin, onDown, onUp, onHold, holdMillisWaitonDouble, doubleMillisWait)
+*!ButtonEvent.addButton*(pin, onDown, onUp, onHold, holdMillisWaitonDouble, doubleMillisWait)
 
  Add a new button to event handler.
 
@@ -14,9 +14,9 @@ Event handler for buttons (tactile switches).
  * *onDouble*: Method called on onDoubleevents.
  * *doubleMillisWait*:  Double time in miliseconds.
 
-*ButtonEvent.loop*()
+*!ButtonEvent.loop*()
 
- Event handler process loop. Must be added to main 'ButtonEvent.loop()' function.
+ Event handler process loop. Must be added to main '*loop*()' function.
 
 = Events =
 
