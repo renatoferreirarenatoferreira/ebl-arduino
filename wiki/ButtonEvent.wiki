@@ -33,6 +33,8 @@ Event handler for buttons (tactile switches).
 
 = Example =
 
+ In this example we configure the pin 12 as a button with all events enabled:
+
 {{{
 #include <ButtonEvent.h>
 
