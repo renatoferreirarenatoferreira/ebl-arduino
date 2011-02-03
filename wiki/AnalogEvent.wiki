@@ -1,4 +1,4 @@
-Event handler for analog ports that can use to read potentiometers and others sensors.
+Event handler for analog ports that can be used to read potentiometers or others sensors.
 
 = Methods =
 
