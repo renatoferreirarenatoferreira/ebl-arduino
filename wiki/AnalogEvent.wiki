@@ -22,6 +22,8 @@ Event handler for analog ports that can be used to read potentiometers or others
 
  The *hysteresis* parameter is useful to avoid too many oscillations when reading a value due to some noise. When defined as greater than 0, the onChange event is launched only when the value changes is greater or equal this parameter.
 
+ Once the *onChange* occurs, the value must be readed from *!AnalogPortInformation->value*. This value is obtained using *analogRead*() and stay between 0 to 1023 that represents the analog reference of input voltage. Look for more information in [http://www.arduino.cc/en/Reference/AnalogRead analogRead() reference].
+
 = Example =
 
  In this example we configure the analog pin 1 to read values from a potentiometer with an hysteresis value of 3:
