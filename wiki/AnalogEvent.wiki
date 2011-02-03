@@ -8,7 +8,7 @@ Event handler for analog ports that can use to read potentiometers and others se
 
  * *pin*: Pin where the button is connected.
  * *onChange*: Method called on onChange events.
- * *hysteresis*: Minimum value change to raise an event.
+ * *hysteresis*: Minimum value change to launch an event.
 
 *!AnalogEvent.loop*()
 
@@ -20,7 +20,7 @@ Event handler for analog ports that can use to read potentiometers and others se
 
 = Comments =
 
- The *hysteresis* parameter is useful to avoid too many oscillations when reading a value due to some noise.
+ The *hysteresis* parameter is useful to avoid too many oscillations when reading a value due to some noise. When defined as greater than 0, the onChange event is launched only when the value changes is greater or equal this parameter.
 
 = Example =
 
