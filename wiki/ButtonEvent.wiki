@@ -11,7 +11,7 @@ Event handler for buttons (tactile switches) on digital ports.
  * *onUp*: Method called on onUp events.
  * *onHold*: Method called on onHold events.
  * *holdMillisWait*: Hold time in miliseconds.
- * *onDouble*: Method called on onDoubleevents.
+ * *onDouble*: Method called on onDouble events.
  * *doubleMillisWait*:  Double time in miliseconds.
 
 *!ButtonEvent.loop*()
