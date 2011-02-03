@@ -1,0 +1,5 @@
+AnalogEvent	KEYWORD3
+AnalogEventClass	KEYWORD3
+AnalogPortInformation	KEYWORD2
+addAnalogPort	KEYWORD2
+loop	KEYWORD2
