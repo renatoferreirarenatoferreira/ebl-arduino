@@ -1,4 +1,4 @@
-Event handler for buttons (tactile switches) connected to digital ports.
+Event handler for buttons (tactile switches) on digital ports.
 
 = Methods =
 
