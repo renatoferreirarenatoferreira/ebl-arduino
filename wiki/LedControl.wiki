@@ -33,7 +33,35 @@ Simple controller for LED's.
  Set a custom power level for a LED. *Depends on PWM*.
 
  * *pin*: Pin where the LED is connected.
- * *pin*: Time in milliseconds to become completely power-off.
+ * *percent*: Level of power from 0 to 100.
+
+
+
+
+
+
+*!LedControl.blink*(pin, times, intervalMilliseconds)
+
+ Set a custom power level for a LED. *Depends on PWM*.
+
+ * *pin*: Pin where the LED is connected.
+ * *percent*: Times to blink.
+ * *percent*: Interval between blinks in miliseconds.
+
+*!LedControl.blink*(pin, times, intervalMilliseconds, delayMilliseconds)
+
+ Set a custom power level for a LED. *Depends on PWM*.
+
+ * *pin*: Pin where the LED is connected.
+ * *percent*: Level of power from 0 to 100.
+ * *percent*: Interval between blinks in miliseconds.
+
+
+
+
+
+
+
 
 *!LedControl.loop*()
 
