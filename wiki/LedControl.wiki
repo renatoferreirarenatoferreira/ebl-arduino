@@ -85,28 +85,17 @@ Simple LED functions with asynchronous capabilities.
 
 = Example =
 
- In this example we configure the analog pin 1 to read values from a potentiometer with an hysteresis value of 3:
+ In this example two LEDs blinking together in different manners. At pin 9 is configured to 500ms of fade in/out with 1s of interval, and at pin 8 is a simple blinker with 200ms of interval:
 
 {{{
-#include <AnalogEvent.h>
+#include <LedControl.h>
 
 void setup() {
-  AnalogEvent.addAnalogPort(1,        //potentiometer pin
-                            onChange, //onChange event function
-                            3);       //hysteresis
-  
-  Serial.begin(9600);
+  LedControl.startBlink(9,1000,500);
+  LedControl.startBlink(8,200);
 }
 
 void loop() {
-  AnalogEvent.loop();
-}
-
-void onChange(AnalogPortInformation* Sender) {
-  Serial.print("Analog (pin:");
-  Serial.print(Sender->pin);
-  Serial.print(") changed to: ");
-  Serial.print(Sender->value);
-  Serial.println("!");
+  LedControl.loop();
 }
 }}}
