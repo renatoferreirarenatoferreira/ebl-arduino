@@ -81,7 +81,7 @@ Simple LED functions with asynchronous capabilities.
 
  Don't forget to check the capable ports for PWM functions.
 
- The *!LedControl.loop*() function is needed only to enable asynchronous functions. Avoid using any blocking function in main '*loop*()' to avoid strange behaviours.
+ The *!LedControl.loop*() function is needed only to enable asynchronous functions. In this case avoid using any blocking function in main '*loop*()'.
 
 = Example =
 
