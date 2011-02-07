@@ -1,4 +1,4 @@
-Simple controller for LED's. 
+Simple LED's functions with asynchronous capabilities.
 
 = Methods =
 
@@ -35,47 +35,53 @@ Simple controller for LED's.
  * *pin*: Pin where the LED is connected.
  * *percent*: Level of power from 0 to 100.
 
-
-
-
-
-
 *!LedControl.blink*(pin, times, intervalMilliseconds)
 
- Set a custom power level for a LED. *Depends on PWM*.
+ Blinks the LED.
 
  * *pin*: Pin where the LED is connected.
- * *percent*: Times to blink.
- * *percent*: Interval between blinks in miliseconds.
+ * *times*: Times to blink.
+ * *intervalMilliseconds*: Interval between blinks in miliseconds.
 
 *!LedControl.blink*(pin, times, intervalMilliseconds, delayMilliseconds)
 
- Set a custom power level for a LED. *Depends on PWM*.
+ Blinks the LED smoothly with "fade in" and "fade out" effect. *Depends on PWM*.
 
  * *pin*: Pin where the LED is connected.
- * *percent*: Level of power from 0 to 100.
- * *percent*: Interval between blinks in miliseconds.
+ * *times*: Times to blink.
+ * *intervalMilliseconds*: Interval between blinks in miliseconds.
+ * *delayMilliseconds*: Time in milliseconds to become completely power-on and power-off.
 
+*!LedControl.startBlink*(pin, intervalMilliseconds)
 
+  Start blinking the LED asynchronous.
 
+ * *pin*: Pin where the LED is connected.
+ * *intervalMilliseconds*: Interval between blinks in miliseconds.
 
+*!LedControl.startBlink*(pin, intervalMilliseconds, delayMilliseconds)
 
+  Start blinking the LED asynchronous with with "fade in" and "fade out" effect. *Depends on PWM*.
 
+ * *pin*: Pin where the LED is connected.
+ * *intervalMilliseconds*: Interval between blinks in miliseconds.
+ * *delayMilliseconds*: Time in milliseconds to become completely power-on and power-off.
 
+*!LedControl.stopBlink*(pin)
+
+ Stop any asynchronous blinking.
+
+ * *pin*: Pin where the LED is connected.
 
 *!LedControl.loop*()
 
- Event handler process loop. Must be added to main '*loop*()' function.
-
-= Events =
-
- * *onChange*: Happens once when a new value is readed.
+ Event handler process loop. Must be added to main '*loop*()' function to enable asynchronous capabilities.
 
 = Comments =
 
- The *hysteresis* parameter is useful to avoid too many oscillations when reading a value due to some noise. When defined as greater than 0, the *onChange* event is launched only when the value changes is greater or equal this parameter.
+ Don't forget to check the capable ports for PWM functions.
 
- Once the *onChange* occurs, the value must be readed from *!AnalogPortInformation->value*. This value is obtained using *analogRead*() and stay between 0 to 1023 that represents the analog reference of input voltage. Look for more information in the  [http://www.arduino.cc/en/Reference/AnalogRead Arduino Reference page].
+ The *!LedControl.loop*() function is needed only to enable asynchronous functions.
 
 = Example =
 
