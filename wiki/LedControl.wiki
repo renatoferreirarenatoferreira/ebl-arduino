@@ -85,7 +85,7 @@ Simple LED functions with asynchronous capabilities.
 
 = Example =
 
- In this example two LEDs blinking together in different manners. At pin 9 is configured to 500ms of fade in/out with 1s of interval, and at pin 8 is a simple blinker with 200ms of interval:
+ In this example two LEDs blinking together in different manners. The LED in pin 9 is configured to 500ms of fade in/out with 1s of interval, and the LED at pin 8 is a simple blinker with 200ms of interval:
 
 {{{
 #include <LedControl.h>
