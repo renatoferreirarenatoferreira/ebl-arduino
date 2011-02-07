@@ -1,0 +1,10 @@
+LedControl	KEYWORD3
+LedControlClass	KEYWORD3
+LedInformation	KEYWORD2
+turnOn	KEYWORD2
+turnOff	KEYWORD2
+addButton	KEYWORD2
+turnPercent	KEYWORD2
+blink	KEYWORD2
+startBlink	KEYWORD2
+stopBlink	KEYWORD2
