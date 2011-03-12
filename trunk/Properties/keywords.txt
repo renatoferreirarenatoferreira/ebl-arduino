@@ -1,0 +1,10 @@
+Properties	KEYWORD3
+PropertiesClass	KEYWORD3
+PropertyInformation	KEYWORD2
+load	KEYWORD2
+save	KEYWORD2
+flush	KEYWORD2
+set	KEYWORD2
+getInt	KEYWORD2
+getLong	KEYWORD2
+get	KEYWORD2
