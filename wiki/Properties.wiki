@@ -1,4 +1,4 @@
-Simple LED functions with asynchronous capabilities.
+Persistent variables handler. Can be used to save configuration data to Arduino EEPROM persistent memory area.
 
 = Methods =
 
