@@ -11,7 +11,7 @@ Simple time scheduler.
 
 *!TimedEvent.addTimer*(eventId, intervalMillis, onEvent)
 
- Add a new timer with an associated ID. With this method the event is not started immediately and must be controled with '*start*(eventId)' and '*stop*(eventId)' methods.
+ Add a new timer with an associated ID. In this method the event is not started immediately and must be controled with '*start*(eventId)' and '*stop*(eventId)' methods.
 
  * *eventId*: Associated event ID. 
  * *intervalMillis*: Time interval in miliseconds.
