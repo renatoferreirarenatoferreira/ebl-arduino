@@ -39,7 +39,7 @@ Simple time scheduler.
  
 = Example =
 
- In this example one event (event1) is used to control when the another one (event2) is started and stoped at regular intervals:
+ In this example one event (event1) is used to control when the another one (event2) is started and stoped at regular intervals while they send data through Serial Monitor:
  
 {{{
 #include <TimedEvent.h>
