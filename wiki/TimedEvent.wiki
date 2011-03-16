@@ -35,7 +35,7 @@ Simple time scheduler.
 
 = Events =
 
- * *onDown*: Happens once when the interval elapses.
+ * *onEvent*: Happens once when the interval elapses.
  
 = Example =
 
