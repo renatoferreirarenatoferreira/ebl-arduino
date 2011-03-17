@@ -1,4 +1,4 @@
-Simple time scheduler.
+Simple task scheduler.
 
 = Methods =
 
