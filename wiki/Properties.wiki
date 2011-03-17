@@ -67,7 +67,7 @@ Persistent variables handler. Can be used to save configuration data to Arduino 
 
 = Example =
 
- In this example two boot counter variables are saved to EEPROM, one in numeric type and another in string type:
+ In this example two boot counter variables are saved in EEPROM, one in numeric type and another in string type:
 
 {{{
 #include <Properties.h>
