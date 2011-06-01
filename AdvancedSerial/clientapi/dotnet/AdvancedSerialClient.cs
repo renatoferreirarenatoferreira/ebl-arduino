@@ -33,7 +33,10 @@ namespace ebl_arduino
                 return false;
         }
 
-        public override void Disconnect()
+        /// <summary>
+        /// Close serial port.
+        /// </summary>
+        public override void Close()
         {
             this.ConnectionStream.Close();
             this.Port.Close();
