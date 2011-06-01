@@ -1,0 +1,6 @@
+AdvancedSerial	KEYWORD3
+AdvancedSerialClass	KEYWORD3
+AdvancedSerialMessage	KEYWORD2
+setReceiver	KEYWORD2
+send	KEYWORD2
+loop	KEYWORD2
