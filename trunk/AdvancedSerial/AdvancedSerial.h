@@ -61,7 +61,7 @@ class AdvancedSerialClass
   public:
     AdvancedSerialClass();
 	void setReceiver(void (*onReceive)(AdvancedSerialMessage* Message));
-	void send(byte type, byte id, byte size, byte* parameters);
+	void send(byte id, byte size, byte* payload);
 	void loop();
 
   private:
@@ -70,6 +70,7 @@ class AdvancedSerialClass
 	byte messageBuffer[sizeof(AdvancedSerialMessage)+MESSAGE_MAX_PAYLOAD_SIZE];
 	AdvancedSerialMessage* message;
 	void (*onReceive)(AdvancedSerialMessage* Message);
+	void send(byte type, byte id, byte size, byte* payload);
 
 };
 

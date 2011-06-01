@@ -39,15 +39,19 @@ void AdvancedSerialClass::setReceiver(void (*onReceive)(AdvancedSerialMessage* M
 	this->onReceive = onReceive;
 }
 
-void AdvancedSerialClass::send(byte type, byte id, byte size, byte* parameters) {
+void AdvancedSerialClass::send(byte type, byte id, byte size, byte* payload) {
 	if (size >= 0 && size <= MESSAGE_MAX_PAYLOAD_SIZE) {
 		Serial.write((byte)DELIMITER_STX);
 		Serial.write(type);
 		Serial.write(id);
 		Serial.write(size);
-		if (size > 0) Serial.write(parameters, size);
+		if (size > 0) Serial.write(payload, size);
 		Serial.write((byte)DELIMITER_ETX);
 	}
+}
+
+void AdvancedSerialClass::send(byte id, byte size, byte* payload) {
+	this->send(MESSAGE, id, size, payload);
 }
 
 void AdvancedSerialClass::loop() {
