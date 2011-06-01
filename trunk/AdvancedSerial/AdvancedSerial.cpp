@@ -40,7 +40,7 @@ void AdvancedSerialClass::setReceiver(void (*onReceive)(AdvancedSerialMessage* M
 }
 
 void AdvancedSerialClass::send(byte type, byte id, byte size, byte* parameters) {
-	if (size > 0 && size <= MESSAGE_MAX_PAYLOAD_SIZE) {
+	if (size >= 0 && size <= MESSAGE_MAX_PAYLOAD_SIZE) {
 		Serial.write((byte)DELIMITER_STX);
 		Serial.write(type);
 		Serial.write(id);

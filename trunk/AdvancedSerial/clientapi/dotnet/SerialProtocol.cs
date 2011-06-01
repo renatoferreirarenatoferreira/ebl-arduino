@@ -144,9 +144,9 @@ namespace ebl_arduino
         public abstract bool IsConnected();
 
         /// <summary>
-        /// Disconnect transport connection.
+        /// Close transport connection.
         /// </summary>
-        public abstract void Disconnect();
+        public abstract void Close();
 
         /// <summary>
         /// Timeout for message confirmation.
@@ -178,7 +178,7 @@ namespace ebl_arduino
         /// <param name="Payload">Message payload</param>
         public void Send(MessageTypes Type, byte ID, byte Size, byte[] Payload)
         {
-            if (Size > 0 && Size <= MESSAGE_MAX_PAYLOAD_SIZE)
+            if (Size >= 0 && Size <= MESSAGE_MAX_PAYLOAD_SIZE)
             {
                 this.ConnectionStream.WriteByte(STX);
                 this.ConnectionStream.WriteByte((byte)Type);
@@ -260,7 +260,7 @@ namespace ebl_arduino
             }
             catch (Exception)
             {
-                this.Disconnect();
+                this.Close();
             }
         }
 
@@ -274,7 +274,7 @@ namespace ebl_arduino
             }
             catch (Exception)
             {
-                this.Disconnect();
+                this.Close();
                 return;
             }
 
@@ -288,7 +288,7 @@ namespace ebl_arduino
                 }
                 catch (Exception)
                 {
-                    this.Disconnect();
+                    this.Close();
                 }
                 return;
             }

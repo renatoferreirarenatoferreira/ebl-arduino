@@ -55,9 +55,9 @@
             </summary>
             <returns>Return true if connected.</returns>
         </member>
-        <member name="M:ebl_arduino.SerialProtocol.Disconnect">
+        <member name="M:ebl_arduino.SerialProtocol.Close">
             <summary>
-            Disconnect transport connection.
+            Close transport connection.
             </summary>
         </member>
         <member name="F:ebl_arduino.SerialProtocol.MessageTimeout">
@@ -201,6 +201,11 @@
             Verify transport connection.
             </summary>
             <returns>Return true if connected.</returns>
+        </member>
+        <member name="M:ebl_arduino.AdvancedSerialClient.Close">
+            <summary>
+            Close serial port.
+            </summary>
         </member>
         <member name="M:ebl_arduino.AdvancedSerialClient.Open(System.String,System.Int32)">
             <summary>
