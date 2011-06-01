@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotnet</name>
+    </assembly>
+    <members>
+        <member name="T:ebl_arduino.AdvancedSerialClient">
+            <summary>
+            Serial client for AdvancedSerial.
+            </summary>
+        </member>
+        <member name="T:ebl_arduino.SerialProtocol">
+            <summary>
+            Protocol implementation for AdvancedSerial.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MESSAGE_HEADER_SIZE">
+            <summary>
+            Size of message header.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MESSAGE_DELIMITER_SIZE">
+            <summary>
+            Size of message delimiter.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MESSAGE_MAX_PAYLOAD_SIZE">
+            <summary>
+            Maximum size of message payload.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MESSAGE_SIZE">
+            <summary>
+            Maximum size of message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.STX">
+            <summary>
+            Start of message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.ETX">
+            <summary>
+            End of message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.ConnectionStream">
+            <summary>
+            Protocol stream.
+            </summary>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.IsConnected">
+            <summary>
+            Verify transport connection.
+            </summary>
+            <returns>Return true if connected.</returns>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.Disconnect">
+            <summary>
+            Disconnect transport connection.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MessageTimeout">
+            <summary>
+            Timeout for message confirmation.
+            </summary>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.Send(ebl_arduino.SerialProtocol.AdvancedSerialMessage)">
+            <summary>
+            Send message.
+            </summary>
+            <param name="Message">Message to send.</param>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.Send(ebl_arduino.SerialProtocol.MessageTypes,System.Byte,System.Byte,System.Byte[])">
+            <summary>
+            Send message.
+            </summary>
+            <param name="Type">Message type.</param>
+            <param name="ID">Message ID.</param>
+            <param name="Size">Payload size.</param>
+            <param name="Payload">Message payload</param>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.Send(ebl_arduino.SerialProtocol.MessageTypes)">
+            <summary>
+            Send simple message without payload.
+            </summary>
+            <param name="Type">Message type.</param>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.Flush">
+            <summary>
+            Clear communication stream.
+            </summary>
+        </member>
+        <member name="M:ebl_arduino.SerialProtocol.Receive">
+            <summary>
+            Receive next amount of data.
+            </summary>
+        </member>
+        <member name="E:ebl_arduino.SerialProtocol.MessageReceived">
+            <summary>
+            Occurs when the a message is received.
+            </summary>
+        </member>
+        <member name="T:ebl_arduino.SerialProtocol.MessageTypes">
+            <summary>
+            Type of AdvancedSerial messages.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MessageTypes.DEBUG">
+            <summary>
+            Common message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MessageTypes.MESSAGE">
+            <summary>
+            Common message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MessageTypes.MESSAGE_ACKNOWLEDGE">
+            <summary>
+            Message acknowledge.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MessageTypes.DISCOVERY_REQUEST">
+            <summary>
+            Discovery request message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.MessageTypes.DISCOVERY_RESPONSE">
+            <summary>
+            Discovery response message.
+            </summary>
+        </member>
+        <member name="T:ebl_arduino.SerialProtocol.AdvancedSerialMessage">
+            <summary>
+            Message class.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.AdvancedSerialMessage.Type">
+            <summary>
+            Type of message.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.AdvancedSerialMessage.ID">
+            <summary>
+            Message ID.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.AdvancedSerialMessage.Size">
+            <summary>
+            Payload size.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.AdvancedSerialMessage.Payload">
+            <summary>
+            Message payload.
+            </summary>
+        </member>
+        <member name="T:ebl_arduino.SerialProtocol.ConnectionState">
+            <summary>
+            Connection states.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.ConnectionState.ReadingSTX">
+            <summary>
+            Receiving start of text.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.ConnectionState.ReadingETX">
+            <summary>
+            Receiving end of text.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.ConnectionState.ReadingHeader">
+            <summary>
+            Receiving header.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.SerialProtocol.ConnectionState.ReadingPayload">
+            <summary>
+            Receiving payload.
+            </summary>
+        </member>
+        <member name="T:ebl_arduino.SerialProtocol.MessageReceivedCallback">
+            <summary>
+            Delegate method for MessageReceived.
+            </summary>
+        </member>
+        <member name="F:ebl_arduino.AdvancedSerialClient.Port">
+            <summary>
+            Serial port.
+            </summary>
+        </member>
+        <member name="M:ebl_arduino.AdvancedSerialClient.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:ebl_arduino.AdvancedSerialClient.IsConnected">
+            <summary>
+            Verify transport connection.
+            </summary>
+            <returns>Return true if connected.</returns>
+        </member>
+        <member name="M:ebl_arduino.AdvancedSerialClient.Open(System.String,System.Int32)">
+            <summary>
+            Starts device communication through a serial port.
+            </summary>
+            <param name="Port">Port name.</param>
+            <param name="BaudRate">Port baud rate.</param>
+        </member>
+    </members>
+</doc>
