@@ -23,7 +23,7 @@ Serial client for AdvancedSerial.
 
 = Methods =
 
-*!Close*()
+*Close*()
 
  Close serial port.
 
@@ -31,7 +31,7 @@ Serial client for AdvancedSerial.
 
  Verify transport connection.
 
-*!Flush*()
+*Flush*()
 
  Clear communication stream.
 
@@ -42,13 +42,13 @@ Serial client for AdvancedSerial.
  * _string_ *Port*: Serial port.
  * _int_ *!BaudRate*: Baud rate.
 
-*!Send*(Message)
+*Send*(Message)
 
  Send message.
 
  * !AdvancedSerialMessage *Message*: Message to send.
 
-*!Send*(Type, ID, Size, Payload)
+*Send*(Type, ID, Size, Payload)
 
  Send message.
 
@@ -57,7 +57,7 @@ Serial client for AdvancedSerial.
  * _byte_ *Size*: Payload size.
  * _byte[]_ *Payload*: Message payload.
 
-*!Send*(Type)
+*Send*(Type)
 
  Clear communication stream.
 
