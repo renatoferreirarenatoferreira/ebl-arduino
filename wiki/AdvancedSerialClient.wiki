@@ -35,7 +35,7 @@ Serial client for AdvancedSerial.
 
  Clear communication stream.
 
-*!Open*(Port, !BaudRate)
+*Open*(Port, !BaudRate)
 
  Starts device communication through a serial port.
 
