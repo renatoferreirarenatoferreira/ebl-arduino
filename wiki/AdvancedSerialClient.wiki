@@ -1,0 +1,111 @@
+Serial client for AdvancedSerial.
+
+= Types =
+
+*!MessageTypes*
+
+ Type of AdvancedSerial messages.
+
+ * *DEBUG*: Debug message.
+ * *MESSAGE*: Common message.
+ * *MESSAGE_ACKNOWLEDGE*: Message acknowledge.
+ * *DISCOVERY_REQUEST*: Discovery request message.
+ * *DISCOVERY_RESPONSE*: Discovery response message.
+
+*!AdvancedSerialMessage*
+
+ Message class. 
+
+ * _!MessageTypes_ *Type*: Message type.
+ * _byte_ *ID*: Message ID.
+ * _byte_ *Size*: Payload size.
+ * _byte[]_ *Payload*: Message payload.
+
+= Methods =
+
+*!AnalogEvent.Close*()
+
+ Close serial port.
+
+*!AnalogEvent.IsConnected*()
+
+ Verify transport connection.
+
+*!AnalogEvent.Flush*()
+
+ Clear communication stream.
+
+*!AnalogEvent.Open*(Port, BaudRate)
+
+ Starts device communication through a serial port.
+
+ * _string_ *Port*: Serial port.
+ * _int_ *!BaudRate*: Baud rate.
+
+*!AnalogEvent.Send*(Message)
+
+ Send message.
+
+ * !AdvancedSerialMessage *Message*: Message to send.
+
+*!AnalogEvent.Send*(Type, ID, Size, Payload)
+
+ Send message.
+
+ * _!MessageTypes_ *Type*: Message type.
+ * _byte_ *ID*: Mesage ID.
+ * _byte_ *Size*: Payload size.
+ * _byte[]_ *Payload*: Message payload.
+
+*!AnalogEvent.Send*(Type)
+
+ Clear communication stream.
+
+ * _!MessageTypes_ *Type*: Message type.
+ 
+= Events =
+
+ * *!MessageReceived*: Occurs when the a message is received. 
+
+= Example =
+
+ This part of a C# code is responsible to send control messages to LCDWriter sketch from [http://code.google.com/p/ebl-arduino/wiki/AdvancedSerial AdvancedSerial]. Permit to control the backlight and text shown in LCD display:
+
+{{{
+try
+{
+    //create object
+    AdvancedSerialClient ArduinoClient = new AdvancedSerialClient();
+    //connect to device
+    ArduinoClient.Open(Arguments[PARAMETER_PORT].ToString(), 115200);
+
+    //command for LED
+    if (Arguments.ContainsKey(PARAMETER_BACKLIGHT))
+    {
+        SerialProtocol.AdvancedSerialMessage BacklightMessage = new SerialProtocol.AdvancedSerialMessage();
+
+        if ((bool)Arguments[PARAMETER_BACKLIGHT])
+            BacklightMessage.ID = BACKLIGHT_ON_MESSAGE;
+        else
+            BacklightMessage.ID = BACKLIGHT_OFF_MESSAGE;
+
+        ArduinoClient.Send(BacklightMessage);
+    }
+
+    //command for text
+    if (Arguments.ContainsKey(PARAMETER_TEXT))
+    {
+        SerialProtocol.AdvancedSerialMessage TextMessage = new SerialProtocol.AdvancedSerialMessage();
+        TextMessage.ID = TEXT_MESSAGE;
+        TextMessage.Payload = new System.Text.ASCIIEncoding().GetBytes(Arguments[PARAMETER_TEXT].ToString());
+        TextMessage.Size = (byte)TextMessage.Payload.Length;
+        ArduinoClient.Send(TextMessage);
+    }
+}
+catch (Exception ex)
+{
+    Console.Write("Error: " + ex.Message);
+}
+}}}
+
+ The complete source code for this example is available at library source tree.
