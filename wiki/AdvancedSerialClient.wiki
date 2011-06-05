@@ -4,7 +4,7 @@ Serial client for AdvancedSerial.
 
 *!MessageTypes*
 
- Type of AdvancedSerial messages.
+ Type of !AdvancedSerial messages.
 
  * *DEBUG*: Debug message.
  * *MESSAGE*: Common message.
@@ -23,32 +23,32 @@ Serial client for AdvancedSerial.
 
 = Methods =
 
-*!AnalogEvent.Close*()
+*!Close*()
 
  Close serial port.
 
-*!AnalogEvent.IsConnected*()
+*!IsConnected*()
 
  Verify transport connection.
 
-*!AnalogEvent.Flush*()
+*!Flush*()
 
  Clear communication stream.
 
-*!AnalogEvent.Open*(Port, BaudRate)
+*!Open*(Port, !BaudRate)
 
  Starts device communication through a serial port.
 
  * _string_ *Port*: Serial port.
  * _int_ *!BaudRate*: Baud rate.
 
-*!AnalogEvent.Send*(Message)
+*!Send*(Message)
 
  Send message.
 
  * !AdvancedSerialMessage *Message*: Message to send.
 
-*!AnalogEvent.Send*(Type, ID, Size, Payload)
+*!Send*(Type, ID, Size, Payload)
 
  Send message.
 
@@ -57,7 +57,7 @@ Serial client for AdvancedSerial.
  * _byte_ *Size*: Payload size.
  * _byte[]_ *Payload*: Message payload.
 
-*!AnalogEvent.Send*(Type)
+*!Send*(Type)
 
  Clear communication stream.
 
