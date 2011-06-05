@@ -14,7 +14,7 @@ Serial client for AdvancedSerial.
 
 *!AdvancedSerialMessage*
 
- Message class. 
+ Message class.
 
  * _!MessageTypes_ *Type*: Message type.
  * _byte_ *ID*: Message ID.
@@ -62,10 +62,10 @@ Serial client for AdvancedSerial.
  Clear communication stream.
 
  * _!MessageTypes_ *Type*: Message type.
- 
+
 = Events =
 
- * *!MessageReceived*: Occurs when the a message is received. 
+ * *!MessageReceived*: Occurs when the a message is received.
 
 = Example =
 
