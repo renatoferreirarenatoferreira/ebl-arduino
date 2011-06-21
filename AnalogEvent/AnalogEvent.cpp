@@ -49,11 +49,7 @@ void AnalogEventClass::addAnalogPort(short pin, void (*onChange)(AnalogPortInfor
 }
 
 void AnalogEventClass::setPosition(short Position) {
-	if (Position == 0) {
-		this->currentPort = this->ports;
-	} else {
-		this->currentPort = (AnalogPortInformation*) ((long)this->ports*(Position+1));
-	}
+	this->currentPort = this->ports+Position;
 }
 
 void AnalogEventClass::loop() {

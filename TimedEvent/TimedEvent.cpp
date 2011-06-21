@@ -55,11 +55,7 @@ void TimedEventClass::addTimer(short eventId, unsigned long intervalMillis, void
 }
 
 void TimedEventClass::setPosition(short Position) {
-	if (Position == 0) {
-		this->currentTimer = this->timers;
-	} else {
-		this->currentTimer = (TimerInformation*) ((long)this->timers*(Position+1));
-	}
+	this->currentTimer = this->timers+Position;
 }
 
 bool TimedEventClass::findTimer(short eventId) {
