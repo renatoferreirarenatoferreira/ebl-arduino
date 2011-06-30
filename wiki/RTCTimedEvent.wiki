@@ -1,4 +1,4 @@
-RTC based time scheduler, similar to Unix Cron. It's currently supporting only the DS1307 based RTC circuits while connected to Arduino's I2C ports (analog 4 for SDA and analog 5 for SCL).
+RTC based time scheduler, similar to Unix Cron. It's currently supporting only DS1307 based RTC circuits while connected to Arduino's I2C ports (analog 4 for SDA and analog 5 for SCL).
 
 = Properties =
 
