@@ -4,7 +4,7 @@ RTC based time scheduler, similar to Unix Cron. It's currently supporting only t
 
 *RTCTimedEvent.initialCapacity*
 
- Define the initial buffer size. It will allocated after first call to *RTCTimedEvent.addTimer*() and must be at least the size of *RTCTimerInformation* structure to be used. Any subsequent calls to *RTCTimedEvent.addTimer*() will use realloc to match the buffer space.
+ Define the initial buffer size. It will allocated after first call to *RTCTimedEvent.addTimer*() and must be at least the size of *RTCTimerInformation* structure to be used. Any subsequent calls to *RTCTimedEvent.addTimer*() will call realloc() to obtain only the missing space.
 
 *RTCTimedEvent.time*
 
