@@ -1,0 +1,10 @@
+RTCTimedEvent	KEYWORD3
+RTCTimedEventClass	KEYWORD3
+RTCTimerInformation	KEYWORD2
+addTimer	KEYWORD2
+loop	KEYWORD2
+clear	KEYWORD2
+readRTC	KEYWORD2
+writeRTC	KEYWORD2
+initialCapacity	KEYWORD2
+time	KEYWORD2
