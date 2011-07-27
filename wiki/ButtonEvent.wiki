@@ -45,6 +45,8 @@ Event handler for buttons (tactile switches) on digital or analog (in series wit
 
  The *onDouble* event override the second *onDown* when it happen within the period specified in *doubleMillisWait*. The *onUp* event ocurrs normaly when the button is released from double event.
 
+ In order to use series of button you need to calculate the correct voltage drop for each button. You may try to use the [http://code.google.com/p/ebl-arduino/wiki/AnalogEvent AnalogEvent] to obtain these values.
+
 = Example =
 
  In this example we configure the digital port 12 as a button with all events enabled:
