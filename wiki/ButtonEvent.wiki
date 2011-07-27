@@ -47,7 +47,7 @@ Event handler for buttons (tactile switches) on digital or analog (in series wit
 
 = Example =
 
- In this example we configure the pin 12 as a button with all events enabled:
+ In this example we configure the digital port 12 as a button with all events enabled:
 
 {{{
 #include <ButtonEvent.h>
