@@ -2,13 +2,13 @@ Serial programming connector.
 
 = Methods =
 
-*!AnalogEvent.setReceiver*(onReceive)
+*!AdvancedSerial.setReceiver*(onReceive)
 
  Add the receive handler callback.
 
  * *onReceive*: Method called on onReceive events.
 
-*!AnalogEvent.send*(id, size, payload)
+*!AdvancedSerial.send*(id, size, payload)
 
  Send a new message.
 
@@ -16,7 +16,7 @@ Serial programming connector.
  * *size*: Payload size.
  * *payload*: Message payload.
 
-*!AnalogEvent.loop*()
+*!AdvancedSerial.loop*()
 
  Event handler process loop. Must be added to main '*loop*()' function.
 
