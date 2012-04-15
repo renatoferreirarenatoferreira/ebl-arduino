@@ -30,7 +30,12 @@
 #define TimedEvent_h
 
 #include <stdlib.h>
+
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#else
 #include "WProgram.h"
+#endif
 
 #define DEFAULT_TIMER_ID -99
 
