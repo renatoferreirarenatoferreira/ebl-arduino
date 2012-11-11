@@ -75,9 +75,20 @@ void TimedEventClass::loop() {
 		if (this->currentTimer->enabled) {
 			this->lastMillis = millis();
 			
-			if (this->currentTimer->lastEventMillis+this->currentTimer->intervalMillis <= this->lastMillis) {
-				this->currentTimer->lastEventMillis = this->lastMillis;
-				this->currentTimer->onEvent(this->currentTimer);
+			//check for millis() overflow
+			if (this->lastMillis < this->currentTimer->lastEventMillis)
+			{
+				//calculate the time before the overflow plus the current time to obtain the invertal
+				if (((((unsigned long)-1) - this->currentTimer->lastEventMillis) + this->lastMillis) > this->currentTimer->intervalMillis) {
+					this->currentTimer->lastEventMillis = this->lastMillis;
+					this->currentTimer->onEvent(this->currentTimer);
+				}
+			} else {
+				//proceed as a normal increment
+				if (this->currentTimer->lastEventMillis+this->currentTimer->intervalMillis <= this->lastMillis) {
+					this->currentTimer->lastEventMillis = this->lastMillis;
+					this->currentTimer->onEvent(this->currentTimer);
+				}
 			}
 		}
 	}
