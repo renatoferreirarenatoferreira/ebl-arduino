@@ -5,3 +5,4 @@ addTimer	KEYWORD2
 start	KEYWORD2
 stop	KEYWORD2
 loop	KEYWORD2
+setInterval	KEYWORD2
