@@ -28,7 +28,7 @@
 
 #include "AdvancedSerial.h"
 
-AdvancedSerialClass::AdvancedSerialClass() {
+AdvancedSerialClass::AdvancedSerialClass( Stream& stream ) : serialStream( stream ) {
 	this->bufferCondition = READING_STX;
 	this->bufferPosition = 0;
 	this->message = (AdvancedSerialMessage*) &this->messageBuffer;
@@ -41,12 +41,12 @@ void AdvancedSerialClass::setReceiver(void (*onReceive)(AdvancedSerialMessage* M
 
 void AdvancedSerialClass::send(byte type, byte id, byte size, byte* payload) {
 	if (size >= 0 && size <= MESSAGE_MAX_PAYLOAD_SIZE) {
-		Serial.write((byte)DELIMITER_STX);
-		Serial.write(type);
-		Serial.write(id);
-		Serial.write(size);
-		if (size > 0) Serial.write(payload, size);
-		Serial.write((byte)DELIMITER_ETX);
+		serialStream.write((byte)DELIMITER_STX);
+		serialStream.write(type);
+		serialStream.write(id);
+		serialStream.write(size);
+		if (size > 0) serialStream.write(payload, size);
+		serialStream.write((byte)DELIMITER_ETX);
 	}
 }
 
@@ -55,16 +55,16 @@ void AdvancedSerialClass::send(byte id, byte size, byte* payload) {
 }
 
 void AdvancedSerialClass::loop() {
-	while(Serial.available() > 0) {
+	while(serialStream.available() > 0) {
 		switch(bufferCondition) {
 			case READING_STX:
-				if ( Serial.read() == DELIMITER_STX) {
+				if ( serialStream.read() == DELIMITER_STX) {
 					this->bufferCondition = READING_HEADER;
 				}
 				break;
 
 			case READING_HEADER:
-				this->messageBuffer[this->bufferPosition] = Serial.read();
+				this->messageBuffer[this->bufferPosition] = serialStream.read();
 				this->bufferPosition++;
 				if ( this->bufferPosition == MESSAGE_HEADER_SIZE ) {
 					if (this->message->size == 0) {
@@ -82,7 +82,7 @@ void AdvancedSerialClass::loop() {
 				break;
 
 			case READING_PAYLOAD:
-				this->messageBuffer[this->bufferPosition] = Serial.read();
+				this->messageBuffer[this->bufferPosition] = serialStream.read();
 				this->bufferPosition++;
 				if ( this->bufferPosition == (this->message->size+sizeof(AdvancedSerialMessage)) ) {
 					this->bufferCondition = READING_ETX;
@@ -90,7 +90,7 @@ void AdvancedSerialClass::loop() {
 				break;
 
 			case READING_ETX:
-				if ( Serial.read() == DELIMITER_ETX) {
+				if ( serialStream.read() == DELIMITER_ETX) {
 					if (this->message->type == DISCOVERY_REQUEST) {
 						this->send(DISCOVERY_RESPONSE, 0, 0, NULL);
 					} else if (this->message->type == MESSAGE) {

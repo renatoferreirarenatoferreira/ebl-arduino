@@ -64,7 +64,7 @@ struct AdvancedSerialMessage {
 class AdvancedSerialClass
 {
   public:
-    AdvancedSerialClass();
+	AdvancedSerialClass(Stream& stream = Serial );
 	void setReceiver(void (*onReceive)(AdvancedSerialMessage* Message));
 	void send(byte id, byte size, byte* payload);
 	void loop();
@@ -74,6 +74,7 @@ class AdvancedSerialClass
 	byte bufferPosition;
 	byte messageBuffer[sizeof(AdvancedSerialMessage)+MESSAGE_MAX_PAYLOAD_SIZE];
 	AdvancedSerialMessage* message;
+	Stream& serialStream;
 	void (*onReceive)(AdvancedSerialMessage* Message);
 	void send(byte type, byte id, byte size, byte* payload);
 
