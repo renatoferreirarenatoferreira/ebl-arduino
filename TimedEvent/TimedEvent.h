@@ -53,6 +53,7 @@ class TimedEventClass
     TimedEventClass();
 	void addTimer(short eventId, unsigned long intervalMillis, void (*onEvent)(TimerInformation* Sender));
 	void addTimer(unsigned long intervalMillis, void (*onEvent)(TimerInformation* Sender));
+	void setInterval(short eventId, unsigned long intervalMillis);
 	void start(short eventId);
 	void stop(short eventId);
 	void loop();

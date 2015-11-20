@@ -107,5 +107,10 @@ void TimedEventClass::stop(short eventId) {
 	}
 }
 
+void TimedEventClass::setInterval(short eventId, unsigned long intervalMillis) {
+	if (this->findTimer(eventId)) {
+		this->currentTimer->intervalMillis = intervalMillis;
+	}
+}
 
 TimedEventClass TimedEvent;
