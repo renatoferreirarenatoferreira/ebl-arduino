@@ -1,0 +1,12 @@
+= AdvancedSerial Library for Arduino =
+
+Serial communication library with a C# .Net client.
+
+Part of ebl-arduino project.
+
+Project URL on GitHub: https://github.com/renatoferreirarenatoferreira/ebl-arduino
+
+== License ==
+
+Copyright (c) 2011, Renato A. Ferreira
+All rights reserved.

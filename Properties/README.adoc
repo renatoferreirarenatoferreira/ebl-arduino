@@ -1,0 +1,12 @@
+= Properties Library for Arduino =
+
+Data storage handler.
+
+Part of ebl-arduino project.
+
+Project URL on GitHub: https://github.com/renatoferreirarenatoferreira/ebl-arduino
+
+== License ==
+
+Copyright (c) 2011, Renato A. Ferreira
+All rights reserved.
